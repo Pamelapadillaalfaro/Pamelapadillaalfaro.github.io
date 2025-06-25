@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Esta página muestra información sobre los jardínes verticales"/>
+    <title>Jardín Vertical</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #flowers {
+            width: 200px;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="main-nav">
+                <li class="main-nav__item"><a href="index.html">Inicio</a></li>
+                <li class="main-nav__item"><a href="Videos/index.html">Videos</a></li>
+                <li class="main-nav__item"><a href="Proyectos/index.html">Proyectos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Jardines Verticales</h1>
+    <h2>Semillas de Plantas</h2>
+
+    <p id="hora-actual"></p>
+
+    <ul>
+        <li><b>Plantas Ornamentales</b></li>
+        <ol>
+            <li>Orquídea
+                <figure><img src="./Plantas/orquidea.jpg" alt="Orquídea" id="flowers"></figure> 
+            </li>
+            <li>Girasol
+                <figure><img src="./Plantas/girasol.jpg" alt="Girasol" id="flowers"></figure> 
+            </li>
+            <li>Dalia</li>
+            <li>Margarita</li>
+        </ol>
+
+        <li><b>Árboles</b></li>
+        <ol>
+            <li><a href="https://www.lifeder.com/jacaranda-genero/">Jacaranda</a>
+                <figure><img src="./Plantas/jacaranda.jpg" alt="Jacaranda" id="flowers"></figure>
+            </li>
+            <li><a href="https://www.ecobotanico.com/ahuehuete/">Ahuehuete</a></li>
+            <li><a href="https://www.lifeder.com/cedros/">Cedro</a>
+                <figure><img src="./Plantas/cedro.jpg" alt="Cedro" id="flowers"></figure> 
+            </li>
+        </ol>
+
+        <li><b>Cactáceas</b></li>
+        <ol>
+            <li><a href="https://www.mexicodesconocido.com.mx/sabila.html">Sábila</a></li>
+            <li>Cactus</li>
+        </ol>
+    </ul>
+
+    <h2>Registro de Datos</h2>
+    <form action="">
+        <label for="nombre">
+            <span>¿Cómo te llamas?</span>
+            <input type="text" name="nombre" id="nombre" placeholder="Tu nombre">
+        </label>
+    </form>
+
+    <script>
+        function obtenerHora() {
+            const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'America/Mexico_City' };
+            const hora = new Intl.DateTimeFormat('es-MX', options).format(new Date());
+            document.getElementById("hora-actual").textContent = "Son las " + hora;
+        }
+
+        obtenerHora();
+        // Opcional: actualizar cada segundo
+        setInterval(obtenerHora, 1000);
+    </script>
+</body>
+</html>
